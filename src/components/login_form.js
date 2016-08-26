@@ -28,7 +28,7 @@ class LoginForm extends Component {
     	var username = this.state.username.trim();
     	var password = this.state.password.trim();
     	console.log("username : " +username);
-    	//this.props.onLogInInfoChange(username, password);
+    	this.props.onLogInInfoChange(username, password);
     }
 
 
