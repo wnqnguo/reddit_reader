@@ -5,7 +5,7 @@ class FrontPage extends Component {
 		super(props);
 		this.state = { username: 'test', password:'test'};
 		//this.onChange = this.onChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+	
 		
 	}
    

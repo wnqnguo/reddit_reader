@@ -13,30 +13,19 @@ import reducers from './reducers';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.fetchNewLogInfo("","");
+  
 
   }
-  fetchNewLogInfo(username,password){
-  	console.log("log in changed username : "+ username)
-  }
+  
   render() {
-
-    return (
-    	<div>
-    		<h2>Reddit Reader</h2>
-    		<LoginForm onLogInInfoChange ={this.fetchNewLogInfo}/>
-    		<ul className="header">
-    		<li><Link to="/frontpage">FrontPage</Link></li>
-    		<li><Link to="/sub_reddits">SubReddit</Link></li>
-    		</ul>
-    		<Router>
-    			<IndexRoute component={Landing} />
-    			<Route path='/frontpage' component={FrontPage} />
-    			<Route path='/sub_reddits' component={SubReddits} />
-    		</Router>
-    	</div>
-      
-     
+	return (
+    	<Router history={hashHistory}>
+    		  <Route path='/' component={Landing}>
+    		   <IndexRoute component={FrontPage} />
+    			<Route path='frontpage' component={FrontPage} />
+    			<Route path='sub_reddits' component={SubReddits} />
+    		  </Route>
+    		</Router>  
     );
   }
 }
